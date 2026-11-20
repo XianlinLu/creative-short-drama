@@ -5,6 +5,7 @@
 | 你要做什么 | 从哪里开始 |
 | --- | --- |
 | 编译剧本和分镜、导入 Lumina、生成和导出成片 | [运行工作流与复验示例](docs/run.md) |
+| 学习如何把约九分钟的故事精剪成 116 秒 | [《记忆典当行》七场精剪范例与完整台词](skills/seedance-2-5/memory-pawnshop.md) · [英文预设提示词](docs/preset-prompts.txt) |
 | 查看《留灯》的七镜时间线与本地动画 | [70 秒短剧示例](examples/leave-a-light/) |
 | 通读全流程，查每一步的输入、产出和回退条件 | [完整链路分析](docs/workflow.md) |
 | 使用或移植这套创作 Skill | [Skill 入口与参考文件读取顺序](skills/seedance-2-5/SKILL.md) |

@@ -52,6 +52,10 @@ Agent 负责提出专业建议，用户保留对剧情、节奏、片长、规�
 5. 按下表只读实际命中的场景。复合任务合并相关场景；已有原片先分清原片编辑、参考重做或直接剪辑。
 6. 有用户素材，或需为视频准备人物、产品、场景、关键帧时，读[输入素材评估与资产准备](references/asset-preparation.md)。先用基础画布的资源检查取得候选图片的真实格式、文件大小和像素尺寸，再对照当前 Seedance 2.5 模式的实时输入条件；同时识别素材职责、用户修改要求与保持项。技术超限不等于素材无用，不能静默丢弃：优先保留原件，询问用户提供更好原图、优化现有图或调整使用方式，再按选择进行确定性处理、图像编辑、补齐或重做。需要生图时读取质量层图像方法与所选模型参考，真实节点与能力仍由基础画布提供。
 
+## Built-in fine-cut example
+
+For a paper edit of an existing drama, or a walkthrough of *The Memory Pawnshop* (《记忆典当行》), read [the worked edit and original Chinese script](memory-pawnshop.md). Use its two timelines to trace source selections to the cut. When adapting a different story, derive its reveal, scene count and duration from that project. Deliver the requested script, cut map or storyboard for review.
+
 ## 场景路由
 
 | 任务 | 补充方法 |

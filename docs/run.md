@@ -10,13 +10,13 @@
 python3 -m drama prepare examples/leave-a-light/project.json --out build/leave-a-light/plan
 ```
 
-输出包括剧本 `screenplay.md`、定时分镜 `storyboard.md`、逐帧时间线 `timeline.json`、字幕 `subtitles.srt` 和 `lumina-workflow.zip`。ZIP 根目录是可发现的 `SKILL.md`，其中带有画布执行入口。`references/` 包含原包 13 份方法文档，`project/` 只装入本项目的剧本和分镜。
+输出包括剧本 `screenplay.md`、定时分镜 `storyboard.md`、逐帧时间线 `timeline.json`、字幕 `subtitles.srt` 和 `lumina-workflow.zip`。ZIP 根目录的 `SKILL.md` 提供画布执行入口，同层的 `memory-pawnshop.md` 收录《记忆典当行》精剪范例与完整中文剧本。`references/` 包含原包 13 份方法文档，`project/` 只装入本项目的剧本和分镜。
 
 [《留灯》项目源文件](../examples/leave-a-light/project.json)维护故事、场次和镜头之间的映射。每镜写明所属场、时长、镜头、起点、事件、终点和声音。编译器检查场次引用、镜号唯一性、全场覆盖和帧对齐，再由镜头顺序累计全片时间码。脚本和镜头由创作者或宿主创作 Skill 编写，改稿时重新编译同一份项目。可以只准备剧本、分镜和执行包，无需先绘制本地动画素材。
 
 ## 二、在 Lumina 执行生成
 
-1. 进入目标画布的 Canvas Agent。打开 **Skill → Create Skill → Import Local Skills → Upload zip archive**，选择上一步的 ZIP。新建草稿自带空白 SKILL.md 时，用包内入口替换。填写名称和简介，保存到 My Skills。
+1. 进入目标画布的 Canvas Agent。打开 **Skill → Create Skill → Import Local Skills → Upload zip archive**，选择上一步的 ZIP。新建草稿自带空白 SKILL.md 时，用包内入口替换。名称填写 **Creative Short Drama Director**。将[英文预设](preset-prompts.txt)填入 Preset Prompts，补上简介后保存到 My Skills。
 2. 在该 Skill 的详情中点 **Use Skills**，确认输入框出现 Skill 标签。仅制作方案可用 Manual mode；要提交实际生成，选择 **Auto mode**。
 3. 对《留灯》，可发送“运行随包《留灯》七镜 70 秒版本。先保存剧本和分镜 Note，读取 ba-canvas 与 lumina-canvas-quality，核对 Seedance 2.5。按 16:9、纯效果音、无配乐无人声、中文后期字幕制作一条片。”同时给出自己的执行与费用范围。
 4. 画布先读取两项宿主依赖，发现当前模型能力，建立同版 Note 和当前段节点。实际尺寸、可选时长和延长输出以本次画布返回为准。记录返回的任务号。手动模式只建好节点时，可在切换 Auto mode 后要求运行已有节点。

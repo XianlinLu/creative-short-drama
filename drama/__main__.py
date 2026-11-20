@@ -69,7 +69,7 @@ def texts(p, timeline):
 
 HOST = """## 运行随包短剧
 
-当用户要求运行本包示例时，读取 project/screenplay.md 和 project/storyboard.md。两份文档组成已编排的同版内容母版。其他创作任务沿用下文的通用流程。
+当用户点名《记忆典当行》或要求学习精剪范例时，读取 memory-pawnshop.md。用户要求运行当前打包项目（如《留灯》）时，读取 project/screenplay.md 和 project/storyboard.md。两份文档组成已编排的同版内容母版。其他创作任务沿用下文的通用流程。
 
 进入画布后，先用宿主已注册的 ba-canvas 核对当前画布、资源、Seedance 2.5 可用模式、规格与真实提交能力。读取宿主 lumina-canvas-quality 的视频、声音、镜头一致性及需要的剪辑规则，据此复核分镜。若缺少其中任一依赖，报告缺失项和受影响的步骤。不得虚报调用或替换模型。
 
@@ -80,9 +80,10 @@ HOST = """## 运行随包短剧
 def package(path, script, board):
     original = (SKILL / "SKILL.md").read_text()
     front, body = original.split("---\n", 2)[1:]
-    front = front.replace("name: 'seedance-2-5'", "name: 'short-drama-workflow'")
+    front = front.replace("name: 'seedance-2-5'", "name: 'creative-short-drama-director'")
     with ZipFile(path, "w", ZIP_DEFLATED) as z:
         z.writestr("SKILL.md", "---\n"+front+"---\n\n"+HOST+"\n"+body)
+        z.write(SKILL / "memory-pawnshop.md", "memory-pawnshop.md")
         for ref in sorted((SKILL / "references").glob("*.md")):
             z.write(ref, "references/"+ref.name)
         z.writestr("project/screenplay.md", script)
