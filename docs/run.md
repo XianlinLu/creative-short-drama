@@ -10,7 +10,7 @@
 python3 -m drama prepare examples/leave-a-light/project.json --out build/leave-a-light/plan
 ```
 
-输出包括剧本 `screenplay.md`、定时分镜 `storyboard.md`、逐帧时间线 `timeline.json`、字幕 `subtitles.srt` 和 `lumina-workflow.zip`。ZIP 根目录的 `SKILL.md` 提供画布执行入口，同层的 `memory-pawnshop.md` 收录《记忆典当行》精剪范例与完整中文剧本。`references/` 包含原包 13 份方法文档，`project/` 只装入本项目的剧本和分镜。
+输出包括剧本 `screenplay.md`、定时分镜 `storyboard.md`、逐帧时间线 `timeline.json`、字幕 `subtitles.srt`、制作草案和 `lumina-workflow.zip`。ZIP 根目录的 `SKILL.md` 提供画布执行入口，同层的 `memory-pawnshop.md` 收录《记忆典当行》精剪范例与完整中文剧本。`references/` 包含导演总流程、三份阶段手册和 13 份专项参考。`project/` 装入同一版剧本、定时分镜、视觉设定、静帧提示词、视频与声音计划和剪辑单草案。后四项根据分镜编译，真实视频回执、素材入出点和声音校时在制作时填写。打开输出目录的 `index.html` 可浏览本次构建产物，在该目录运行 `shasum -a 256 -c SHA256SUMS` 可逐文件复验。
 
 [《留灯》项目源文件](../examples/leave-a-light/project.json)维护故事、场次和镜头之间的映射。每镜写明所属场、时长、镜头、起点、事件、终点和声音。编译器检查场次引用、镜号唯一性、全场覆盖和帧对齐，再由镜头顺序累计全片时间码。脚本和镜头由创作者或宿主创作 Skill 编写，改稿时重新编译同一份项目。可以只准备剧本、分镜和执行包，无需先绘制本地动画素材。
 
@@ -23,7 +23,7 @@ python3 -m drama prepare examples/leave-a-light/project.json --out build/leave-a
 5. 按宿主交接规则恢复原任务。要求“查询当前任务；已就绪则读取实片边界，并继续下一段”。每次使用真实上游延长，直到所需素材齐备。若宿主不可延长，按实际能力与授权决定是否调整路线。网络中断时先查原任务，避免重复提交。
 6. 核对延长结果是否包含前段，使用完整来源加字幕、复核时长并导出。项目分镜页、任务提交回执、可播放视频和最终导出文件各自代表不同阶段。
 
-画布通过宿主内部的 Skill 名称加载依赖，执行口是 Canvas Agent。个人库里的 Skill 可复用。更换项目时重新导入该项目的执行包或替换其中的两份项目文件。请在自己有权使用的画布内运行，仓库不保存登录态、任务编号或临时媒体地址。
+画布通过宿主内部的 Skill 名称加载依赖，执行口是 Canvas Agent。个人库里的 Skill 可复用。更换项目时重新导入该项目的执行包或替换其中同一版本的项目文档。请在自己有权使用的画布内运行，仓库不保存登录态、任务编号或临时媒体地址。
 
 ## 三、本地渲染并复验
 

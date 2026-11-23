@@ -7,6 +7,9 @@ from pathlib import Path
 from zipfile import ZIP_DEFLATED, ZipFile
 
 
+from .production import production_notes, write_delivery_index
+
+
 SKILL = Path(__file__).resolve().parents[1] / "skills" / "seedance-2-5"
 
 
@@ -67,9 +70,11 @@ def texts(p, timeline):
     return "\n\n".join(script)+"\n", "\n\n".join(board)+"\n"
 
 
-HOST = """## 运行随包短剧
+HOST = """## 在 Lumina 使用导演工作流
 
-当用户点名《记忆典当行》或要求学习精剪范例时，读取 memory-pawnshop.md。用户要求运行当前打包项目（如《留灯》）时，读取 project/screenplay.md 和 project/storyboard.md。两份文档组成已编排的同版内容母版。其他创作任务沿用下文的通用流程。
+先按[导演工作流](references/director-workflow.md)选择入口。正式单集可将剧本、设定、分镜、图片提示词、视频计划和剪辑单分节保存到画布 Note，沿用同一组场号和镜号。
+
+当用户点名《记忆典当行》或要求学习精剪范例时，读取 memory-pawnshop.md。用户要求运行当前打包项目（如《留灯》）时，读取 project/screenplay.md 和 project/storyboard.md。同目录的 visual-design.md、image-prompts.md、video-plan.md 和 edit-sheet.md 是同版制作草案；在投入生成或剪辑前结合真实素材校正。其他创作任务沿用下文的通用流程。
 
 进入画布后，先用宿主已注册的 ba-canvas 核对当前画布、资源、Seedance 2.5 可用模式、规格与真实提交能力。读取宿主 lumina-canvas-quality 的视频、声音、镜头一致性及需要的剪辑规则，据此复核分镜。若缺少其中任一依赖，报告缺失项和受影响的步骤。不得虚报调用或替换模型。
 
@@ -77,7 +82,7 @@ HOST = """## 运行随包短剧
 """
 
 
-def package(path, script, board):
+def package(path, documents):
     original = (SKILL / "SKILL.md").read_text()
     front, body = original.split("---\n", 2)[1:]
     front = front.replace("name: 'seedance-2-5'", "name: 'creative-short-drama-director'")
@@ -86,8 +91,8 @@ def package(path, script, board):
         z.write(SKILL / "memory-pawnshop.md", "memory-pawnshop.md")
         for ref in sorted((SKILL / "references").glob("*.md")):
             z.write(ref, "references/"+ref.name)
-        z.writestr("project/screenplay.md", script)
-        z.writestr("project/storyboard.md", board)
+        for name, content in documents.items():
+            z.writestr("project/" + name, content)
 
 
 def main():
@@ -107,17 +112,19 @@ def main():
         args.out.mkdir(parents=True, exist_ok=True)
         with tempfile.TemporaryDirectory(dir=args.out) as tmp:
             tmp = Path(tmp)
-            (tmp/"screenplay.md").write_text(script, encoding="utf-8")
-            (tmp/"storyboard.md").write_text(board, encoding="utf-8")
+            documents = {"screenplay.md": script, "storyboard.md": board, **production_notes(p, timeline)}
+            for name, content in documents.items():
+                (tmp / name).write_text(content, encoding="utf-8")
             (tmp/"timeline.json").write_text(json.dumps(timeline, ensure_ascii=False, indent=2), encoding="utf-8")
             from .finish import finish, subtitles
             (tmp/"subtitles.srt").write_text(subtitles(timeline, p["fps"]), encoding="utf-8")
-            package(tmp/"lumina-workflow.zip", script, board)
+            package(tmp/"lumina-workflow.zip", documents)
             if args.command == "finish":
                 finish(p, timeline, args.source, tmp)
             if args.command == "render":
                 from .render import render
                 render(p, timeline, args.project.resolve().parent, tmp, args.font)
+            write_delivery_index(tmp, p["title"])
             files = list(tmp.iterdir())
             for file in files:
                 file.replace(args.out / file.name)

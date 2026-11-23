@@ -1,9 +1,10 @@
 # Creative Short Drama · 短剧创作流程
 
-这套 Seedance 2.5 工作流从创意、剧本和分镜出发，讲清如何把一条片子拆成素材准备、视频生成、逐段延长和后期交付。仓库收录了 v11 原包的 14 份 Markdown 文件，并提供一份跨文档的流程分析。
+Creative Short Drama Director 从小说、参考片、故事点子或已有分集稿进入制作，支持逐集交接、镜头投产和剪辑验收。新增的四份中文导演手册、工作流入口及本地制作文档编译代码由本项目独立创作。
 
 | 你要做什么 | 从哪里开始 |
 | --- | --- |
+| 按手上的素材选择环节，查看 12 个环节的输入与交付 | [短剧与漫剧导演工作流](skills/seedance-2-5/references/director-workflow.md) |
 | 编译剧本和分镜、导入 Lumina、生成和导出成片 | [运行工作流与复验示例](docs/run.md) |
 | 学习如何把约九分钟的故事精剪成 116 秒 | [《记忆典当行》七场精剪范例与完整台词](skills/seedance-2-5/memory-pawnshop.md) · [英文预设提示词](docs/preset-prompts.txt) |
 | 查看《留灯》的七镜时间线与本地动画 | [70 秒短剧示例](examples/leave-a-light/) |
