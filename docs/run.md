@@ -10,11 +10,13 @@
 python3 -m drama prepare examples/leave-a-light/project.json --out build/leave-a-light/plan
 ```
 
-输出包括剧本 `screenplay.md`、定时分镜 `storyboard.md`、逐帧时间线 `timeline.json`、字幕 `subtitles.srt`、制作草案和 `lumina-workflow.zip`。ZIP 根目录的 `SKILL.md` 提供画布执行入口，同层的 `memory-pawnshop.md` 收录《记忆典当行》精剪范例与完整中文剧本。`references/` 包含导演总流程、三份阶段手册、人物与对白连线手册和 13 份专项参考。`project/` 装入同一版剧本、定时分镜、视觉设定、静帧提示词、视频与声音计划和剪辑单草案。后四项根据分镜编译，真实视频回执、素材入出点和声音校时在制作时填写。打开输出目录的 `index.html` 可浏览本次构建产物，在该目录运行 `shasum -a 256 -c SHA256SUMS` 可逐文件复验。
+输出包括剧本 `screenplay.md`、定时分镜 `storyboard.md`、逐帧时间线 `timeline.json`、字幕 `subtitles.srt`、制作草案和 `lumina-workflow.zip`。ZIP 根目录的 `SKILL.md` 提供画布执行入口，同层的 `memory-pawnshop.md` 收录《记忆典当行》精剪范例与完整中文剧本。`references/` 包含导演总流程、三份阶段手册、人物与对白手册、双画布连线手册和 13 份专项参考。`project/` 装入同一版剧本、定时分镜、视觉设定、静帧提示词、视频与声音计划和剪辑单草案。后四项根据分镜编译，真实视频回执、素材入出点和声音校时在制作时填写。打开输出目录的 `index.html` 可浏览本次构建产物，在该目录运行 `shasum -a 256 -c SHA256SUMS` 可逐文件复验。
 
 [《留灯》项目源文件](../examples/leave-a-light/project.json)维护故事、场次和镜头之间的映射。每镜写明所属场、时长、镜头、起点、事件、终点和声音。编译器检查场次引用、镜号唯一性、全场覆盖和帧对齐，再由镜头顺序累计全片时间码。脚本和镜头由创作者或宿主创作 Skill 编写，改稿时重新编译同一份项目。可以只准备剧本、分镜和执行包，无需先绘制本地动画素材。
 
-## 二、在 Lumina 执行生成
+## 二、在 Lumi 或 Lumina 执行生成
+
+两端使用同一个 ZIP。在火山引擎 Lumi 打开「Skill → 我的技能 → 创意短剧导演 → 编辑 → 添加文件 → 上传 zip 压缩包」更新。在 BytePlus Lumina 打开 My Skills 中的 Creative Short Drama Director 进行同样操作。[连接与验收方法](../skills/seedance-2-5/references/canvas-connections.md)列出每个节点需要的输入及旧画布的补线步骤。
 
 1. 进入目标画布的 Canvas Agent。打开 **Skill → Create Skill → Import Local Skills → Upload zip archive**，选择上一步的 ZIP。新建草稿自带空白 SKILL.md 时，用包内入口替换。名称填写 **Creative Short Drama Director**。将[英文预设](preset-prompts.txt)填入 Preset Prompts，补上简介后保存到 My Skills。
 2. 在该 Skill 的详情中点 **Use Skills**，确认输入框出现 Skill 标签。仅制作方案可用 Manual mode；要提交实际生成，选择 **Auto mode**。
