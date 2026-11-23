@@ -11,6 +11,7 @@ Creative Short Drama Director 从小说、参考片、故事点子或已有分�
 | 通读全流程，查每一步的输入、产出和回退条件 | [完整链路分析](docs/workflow.md) |
 | 使用或移植这套创作 Skill | [Skill 入口与参考文件读取顺序](skills/seedance-2-5/SKILL.md) |
 | 从一句话故事写到可拍的短剧分镜 | [影视与叙事](skills/seedance-2-5/references/narrative-film.md) |
+| 分镜后制作全员三视图、试音和正式对白，检查每段连线 | [画布人物与对白流程](skills/seedance-2-5/references/cast-and-dialogue.md) |
 | 让多个场景沿同一条真实视频逐段延长 | [串行延长与任务恢复](skills/seedance-2-5/references/sequential-extension-chain.md) |
 
 **短剧的典型路径**是先明确人物想得到什么、遇到什么阻碍，再写出行动、对白和结局。创作分镜为每次切镜给出理由，按表演和声音估时。制作阶段才决定哪些镜头能放进同一次生成，哪些需要接着上一段实片延长。

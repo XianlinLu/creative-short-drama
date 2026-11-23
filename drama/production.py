@@ -9,7 +9,7 @@ def production_notes(project, timeline):
     look = [f"# 《{project['title']}》视觉与声音设定", project["style"], project["sound"]]
     places = {scene["id"]: scene["place"] for scene in project["scenes"]}
     stills = ["# 分镜静帧提示词草案", "按镜号核对构图和人物身份，再绑定实际可用的参考图。"]
-    motion = ["# 视频与声音计划", "以下是按镜规划的节拍。实际生成时按模式组织成段；续写段等上一段视频就绪后，根据实片结尾另写本轮提交词。"]
+    motion = ["# 视频与声音计划", "以下是按镜规划的节拍。实际生成时按模式组织成段；画布上先完成全员三视图、试音、正式台词及用户确认。每段直连实际用到的角色图、正式台词和本段分镜；续写段另接上一段真实视频，根据实片结尾编写本轮提交词。"]
     edit = ["# 剪辑单草案", "时间码取自分镜。拿到实片后补录素材版本与源入出点，并按实测声音校正字幕。"]
     for scene_id, place in places.items():
         look.append(f"## {scene_id}　{place}")

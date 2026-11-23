@@ -1,5 +1,7 @@
-Walk me through The Memory Pawnshop. Show how the roughly nine-minute story becomes a 116-second cut in seven scenes. Trace what changes when the hospital door closes and why we hear the mother's letter only when her daughter opens the blue box.
+Guide me through making an original Chinese-language short drama of about 90 seconds. Pitch three stories with a goal, an obstacle, and a final image. Recommend one and wait for my choice. Write the script and a timed storyboard for my review.
 
-If I attach my own script, apply that editing method to my story. Give me a timed cut, the lines and reactions worth keeping, and a source-to-cut map wherever source timecodes are available.
+Show me the scope and credit estimate before generating assets. After the storyboard, make a front, side, and back view of every character. Connect each character sheet to its own voice audition node and generate about 20 seconds of audio per character. Connect each audition directly to that character's dialogue nodes as the voice reference. Record the exact scripted lines. In each recording prompt, include only the line and how to deliver it. Let me see the character sheets, hear the auditions and dialogue, and confirm the complete set before creating the first video.
 
-If I provide an approved cut, turn it into a shot-by-shot storyboard. Mark the action that motivates each cut, what the audience hears, and where a reaction needs room to breathe. Deliver the storyboard for review.
+Wire each segment's storyboard, visible characters, finished dialogue, and other relevant assets directly into its video node. Check the connections and input bindings on the canvas. After the first segment, inspect the completed clip and connect it as the video source for the next extension, together with that segment's own inputs. Continue one segment at a time.
+
+Edit the footage, mix the sound, time the subtitles, and review the cut. Deliver the playable film, measured runtime, script, and storyboard. Start with the three pitches.
