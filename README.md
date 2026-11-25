@@ -4,6 +4,7 @@ Creative Short Drama Director 从小说、参考片、故事点子或已有分�
 
 | 你要做什么 | 从哪里开始 |
 | --- | --- |
+| 没有剧本，直接拍第一集 | [新手制作流程](skills/seedance-2-5/references/first-episode.md) · [中文预设](docs/preset-prompts-zh.txt) · [英文预设](docs/preset-prompts.txt) |
 | 按手上的素材选择环节，查看 12 个环节的输入与交付 | [短剧与漫剧导演工作流](skills/seedance-2-5/references/director-workflow.md) |
 | 编译剧本和分镜、导入 Lumina、生成和导出成片 | [运行工作流与复验示例](docs/run.md) |
 | 学习如何把约九分钟的故事精剪成 116 秒 | [《记忆典当行》七场精剪范例与完整台词](skills/seedance-2-5/memory-pawnshop.md) · [英文预设提示词](docs/preset-prompts.txt) |
